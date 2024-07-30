@@ -50,7 +50,18 @@ class MeuController extends Controller
     public function editDadoForm($id){
 
         // pegar dados do BD
-        return view ('formedit');
+        $model = new UsuariosModel();
+        $dados['data'] = $model->find($id);
+        return view ('formedit',$dados);
+    }
+
+    public function updateDado(Request $request){
+        $data = array(
+            'nome' => $request->nome,
+            'idade' => $request->idade
+        );
+        $id = $request->id_for_updating;
+        $model = new UsuariosModel();
 
 
     }

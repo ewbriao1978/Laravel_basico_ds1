@@ -9,3 +9,4 @@ Route::get('/formulario', [MeuController::class,'myform']);
 Route::post('/dados',[MeuController::class,'recebeDados']);
 Route::post('/remove',[MeuController::class,'removeDado']);
 Route::get('/edit/{id}', [MeuController::class,'editDadoForm']);
+Route::post('/update',[MeuController::class,'updateDado']);
