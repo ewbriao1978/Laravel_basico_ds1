@@ -30,6 +30,7 @@
 
     <td>
         <form method = "post" action = "{{ url('remove')}}">
+            @csrf
             <input type = "hidden" name = "id_for_removing" value = "{{ $my_data['id']}}">
             <button type="submit"> Remover </button>
         </form>

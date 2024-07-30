@@ -37,10 +37,17 @@ class MeuController extends Controller
 
         return redirect('/')->with('sucess','Registro de dados realizado com sucesso');
 
+    }
 
-
+    public function removeDado(Request $request){
+        $id = $request->id_for_removing;
+        //echo "ID".$id;
+        $model = new UsuariosModel();
+        $model->find($id)->delete();
+        return redirect('/')->with('sucess_removing','Registro removido com sucesso');
 
 
     }
+
 
 }
