@@ -35,7 +35,7 @@ class MeuController extends Controller
         $model->idade = $data['idade'];
         $model->save();
 
-        return redirect('/')->with('sucess','Registro de dados realizado com sucesso');
+        return redirect('/')->with('success','Registro de dados realizado com sucesso');
 
     }
 
@@ -44,7 +44,7 @@ class MeuController extends Controller
         //echo "ID".$id;
         $model = new UsuariosModel();
         $model->find($id)->delete();
-        return redirect('/')->with('sucess_removing','Registro removido com sucesso');
+        return redirect('/')->with('success_removing','Registro removido com sucesso');
     }
 
     public function editDadoForm($id){

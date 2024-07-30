@@ -1,6 +1,16 @@
 <h1> Ola </h1>
 <h2> Listagem dos Dados </h2>
 
+@if (session()->has('success'))
+<strong> <font color="Navy"> {{ session('success') }} <font> </strong>
+<br>
+@elseif (session()->has('success_removing'))
+<strong> <font color="RoyalBlue"> {{ session('success_removing')}} <font> </strong>
+@elseif (session()->has('success_update'))
+<strong> <font color="SteelBlue"> {{ session('success_update') }} <font> </strong>
+
+@endif
+
 <table class="table table-striped">
      <thead>
         <tr>
