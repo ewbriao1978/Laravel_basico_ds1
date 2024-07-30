@@ -9,6 +9,9 @@ use App\Models\UsuariosModel;
 class MeuController extends Controller
 {
     public function minhaTela(){
+
+        $model = new UsuariosModel();
+        //$dados =
         return view('welcome');
     }
 
@@ -30,6 +33,10 @@ class MeuController extends Controller
         $model->nome = $data['nome'];
         $model->idade = $data['idade'];
         $model->save();
+
+        return redirect('/')->with('sucess','Registro de dados realizado com sucesso');
+
+
 
 
 
