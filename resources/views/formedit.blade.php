@@ -1,7 +1,8 @@
-<t1> Inserir dados </t1>
+<t1> Edição </t1>
 <br>
 <br>
-<form action="/dados" method="post">
+
+<form action="/update" method="post">
     @csrf
 <label> Nome: </label>
 <input type="text" name="nome">

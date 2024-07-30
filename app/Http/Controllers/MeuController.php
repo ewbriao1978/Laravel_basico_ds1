@@ -45,6 +45,12 @@ class MeuController extends Controller
         $model = new UsuariosModel();
         $model->find($id)->delete();
         return redirect('/')->with('sucess_removing','Registro removido com sucesso');
+    }
+
+    public function editDadoForm($id){
+
+        // pegar dados do BD
+        return view ('formedit');
 
 
     }
