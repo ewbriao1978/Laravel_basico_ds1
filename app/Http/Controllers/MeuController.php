@@ -56,13 +56,15 @@ class MeuController extends Controller
     }
 
     public function updateDado(Request $request){
-        $data = array(
+        $meu_array = array(
             'nome' => $request->nome,
             'idade' => $request->idade
         );
         $id = $request->id_for_updating;
-        $model = new UsuariosModel();
 
+        $model = new UsuariosModel();
+        $model->find($id)->update($meu_array);
+        return redirect('/')->with('success_update','Registro atualizado com sucesso');
 
     }
 
