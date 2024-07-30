@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UsuariosModel;
+use Validator;
 
 
 class MeuController extends Controller
@@ -26,6 +27,15 @@ class MeuController extends Controller
 
 
     public function recebeDados(Request $request){
+        $validator = Validator::make($request->all(),
+        [
+        'nome' => 'required|min:5|max:255',
+        'idade' => 'required|numeric'
+        ]
+        );
+        if ($validator->fails()){
+            return back()->withError($validator)->withInput();
+        }
         $data = array(
             'nome' => $request->nome,
             'idade' => $request->idade
