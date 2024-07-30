@@ -11,8 +11,9 @@ class MeuController extends Controller
     public function minhaTela(){
 
         $model = new UsuariosModel();
-        //$dados =
-        return view('welcome');
+        $dados['data'] = $model->all();
+       // var_dump($dados['data']);
+        return view('welcome',$dados);
     }
 
     public function outraTela(){
